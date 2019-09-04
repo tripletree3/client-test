@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
+	"time"
 )
 
 var upGrader = websocket.Upgrader{}
@@ -21,6 +22,24 @@ func connect(c *gin.Context) {
 		return
 	}
 	defer ws.Close()
+
+	go func() {
+		ticker := time.NewTicker(time.Second * 1)
+		defer ticker.Stop()
+
+		for {
+			select {
+			case t := <-ticker.C:
+				fmt.Println("write msg:", t.String())
+				err := ws.WriteMessage(websocket.TextMessage, []byte(t.String()))
+				if err != nil {
+					fmt.Println("write err:", err)
+					return
+				}
+			}
+		}
+	}()
+
 	for {
 		mt, msg, err := ws.ReadMessage()
 		if err != nil {

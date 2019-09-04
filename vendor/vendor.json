@@ -1,0 +1,79 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "mKall8xfKBPL/a5Ji//i968rLsY=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "54d8467d122d380a14768b6b4e5cd7ca4755938f",
+			"revisionTime": "2019-06-02T15:02:53Z"
+		},
+		{
+			"checksumSHA1": "m4NnJlXJGptniJCVq4Ycxv/BRz0=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "f98b339b773105aad77f321d0baaa30475bf875d",
+			"revisionTime": "2019-06-27T04:47:45Z"
+		},
+		{
+			"checksumSHA1": "7B85He9fYRLpGHDd3R3q1qQhP0Y=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "f98b339b773105aad77f321d0baaa30475bf875d",
+			"revisionTime": "2019-06-27T04:47:45Z"
+		},
+		{
+			"checksumSHA1": "GAHho8qMLbDfGoD4w7SX7ZRT56U=",
+			"path": "github.com/gin-gonic/gin/internal/json",
+			"revision": "f98b339b773105aad77f321d0baaa30475bf875d",
+			"revisionTime": "2019-06-27T04:47:45Z"
+		},
+		{
+			"checksumSHA1": "W9AUeI1417RP1ZuqoamB7mowTR0=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "f98b339b773105aad77f321d0baaa30475bf875d",
+			"revisionTime": "2019-06-27T04:47:45Z"
+		},
+		{
+			"checksumSHA1": "NPJIM7sd6BEGbQ/NkraNftcRXj8=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "b285ee9cfc6c881bb20c0d8dc73370ea9b9ec90f",
+			"revisionTime": "2019-05-17T06:12:10Z"
+		},
+		{
+			"checksumSHA1": "kOV5boGCCq9HxBbm114Pl2zQ0mk=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "c3e18be99d19e6b3e8f1559eea2c161a665c4b6b",
+			"revisionTime": "2019-08-25T01:20:11Z"
+		},
+		{
+			"checksumSHA1": "p/g8QEmoH6/jBQNFU0q2P9NcNKI=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "1311e847b0cb909da63b5fecfb5370aa66236465",
+			"revisionTime": "2019-05-22T01:25:13Z"
+		},
+		{
+			"checksumSHA1": "mmeETEv6OYiNE47UM3VieBHQUuI=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "31766e6012df12848d7396555f894f758da760e6",
+			"revisionTime": "2019-06-26T15:02:40Z"
+		},
+		{
+			"checksumSHA1": "REF/X+PvlprkLO5V6dT8j3kRByk=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "04f50cda93cbb67f2afa353c52f342100e80e625",
+			"revisionTime": "2019-06-26T21:29:17Z"
+		},
+		{
+			"checksumSHA1": "q190bL03wQok3wVwYmMub2XhOiU=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f1438d3fca68893a817e4a66806cea46a9e4ebf",
+			"revisionTime": "2017-07-30T05:02:35Z"
+		},
+		{
+			"checksumSHA1": "oNqPrS2edE8peI3ah2INe379k8E=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
+			"revisionTime": "2018-11-15T11:05:04Z"
+		}
+	],
+	"rootPath": "client-test"
+}

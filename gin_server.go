@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
+	"sync"
 	"time"
 )
 
@@ -23,6 +24,8 @@ func connect(c *gin.Context) {
 	}
 	defer ws.Close()
 
+	reqMutex := sync.Mutex{}
+
 	go func() {
 		ticker := time.NewTicker(time.Second * 1)
 		defer ticker.Stop()
@@ -31,14 +34,34 @@ func connect(c *gin.Context) {
 			select {
 			case t := <-ticker.C:
 				fmt.Println("write msg:", t.String())
-				err := ws.WriteMessage(websocket.TextMessage, []byte(t.String()))
-				if err != nil {
-					fmt.Println("write err:", err)
-					return
-				}
+				func() {
+					reqMutex.Lock()
+					defer reqMutex.Unlock()
+					err := ws.WriteMessage(websocket.TextMessage, []byte(t.String()))
+					if err != nil {
+						fmt.Println("write err:", err)
+						return
+					}
+				}()
 			}
 		}
 	}()
+	//go func() {
+	//	ticker := time.NewTicker(time.Second * 2)
+	//	defer ticker.Stop()
+	//
+	//	for {
+	//		select {
+	//		case t := <-ticker.C:
+	//			fmt.Println("write msg:", t.String())
+	//			err := ws.WriteMessage(websocket.TextMessage, []byte(t.String()))
+	//			if err != nil {
+	//				fmt.Println("write err:", err)
+	//				return
+	//			}
+	//		}
+	//	}
+	//}()
 
 	for {
 		mt, msg, err := ws.ReadMessage()

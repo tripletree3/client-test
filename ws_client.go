@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/websocket"
 	"net/url"
+	"time"
 )
 
 func main() {
@@ -23,6 +24,7 @@ func main() {
 			fmt.Println("read err:", err)
 			return
 		}
+		time.Sleep(time.Second * 2)
 		fmt.Println("from server msg:", string(msg))
 	}
 

@@ -34,15 +34,16 @@ func connect(c *gin.Context) {
 			select {
 			case t := <-ticker.C:
 				fmt.Println("write 1 msg:", t.String())
+				var err error
 				func() {
 					reqMutex.Lock()
 					defer reqMutex.Unlock()
-					err := ws.WriteMessage(websocket.TextMessage, []byte("1111 "+t.String()))
-					if err != nil {
-						fmt.Println("write 1 err:", err)
-						return
-					}
+					err = ws.WriteMessage(websocket.TextMessage, []byte("1111 "+t.String()))
 				}()
+				if err != nil {
+					fmt.Println("write 1 err:", err)
+					return
+				}
 			}
 		}
 	}()
@@ -54,15 +55,16 @@ func connect(c *gin.Context) {
 			select {
 			case t := <-ticker.C:
 				fmt.Println("write 2 msg:", t.String())
+				var err error
 				func() {
 					reqMutex.Lock()
 					defer reqMutex.Unlock()
-					err := ws.WriteMessage(websocket.TextMessage, []byte("2222 "+t.String()))
-					if err != nil {
-						fmt.Println("write 2 err:", err)
-						return
-					}
+					err = ws.WriteMessage(websocket.TextMessage, []byte("2222 "+t.String()))
 				}()
+				if err != nil {
+					fmt.Println("write 2 err:", err)
+					return
+				}
 			}
 		}
 	}()

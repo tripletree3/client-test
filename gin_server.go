@@ -10,7 +10,7 @@ import (
 var upGrader = websocket.Upgrader{}
 
 func main() {
-	bindAddress := "localhost:8088"
+	bindAddress := ":8088"
 	r := gin.Default()
 	r.GET("/connect", connect)
 	r.Run(bindAddress)

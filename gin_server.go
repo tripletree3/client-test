@@ -50,6 +50,7 @@ func connect(c *gin.Context) {
 					fmt.Println("write 1 err:", err)
 					return
 				}
+				id++
 			}
 		}
 	}()

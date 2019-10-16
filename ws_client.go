@@ -1,7 +1,9 @@
 package main
 
 import (
+	"client-test/prototest"
 	"fmt"
+	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/websocket"
 	"net/url"
 )
@@ -24,7 +26,9 @@ func main() {
 			return
 		}
 		//time.Sleep(time.Second * 2)
-		fmt.Println("from server msg:", string(msg))
+		p := &prototest.Person{}
+		proto.Unmarshal(msg, p)
+		fmt.Println("from server msg:", p)
 	}
 
 	//done := make(chan struct{})

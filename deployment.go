@@ -34,7 +34,7 @@ func main() {
 
 	namespace := "default"
 	listDeployments(namespace, clientset)
-	createDeployment(namespace, clientset)
+	//createDeployment(namespace, clientset)
 }
 
 func listDeployments(ns string, cs *kubernetes.Clientset) {
